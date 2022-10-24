@@ -1,0 +1,20 @@
+<div class="form-floating">
+    <input type="text" class="form-control altura" name="operando1" id="operando1" placeholder="Operando 1" onblur="validarCampo(this)" >
+    <label for="floatingInput" style="margin-top:-5px">Operando 1:</label>
+</div>
+<div class="form-floating">
+    <input type="text" class="form-control altura" name="operando2" id="operando2" placeholder="Operando 2" onblur="validarCampo(this)" >
+    <label for="floatingInput" style="margin-top:-5px">Operando 2</label>
+</div>
+<hr>
+<div class="form-floating">
+    <input type="text" class="form-control" name="resultado" id="resultado"
+        placeholder="Resultado" disabled>
+    <label for="floatingInput">Resultado:</label>
+</div>
+<div class="operadores">
+    <button class="btn btn-lg btn-primary botones" type="button" id="botonSumar" onclick="sumar()">Sumar</button>
+    <button class="btn btn-lg btn-primary botones" type="button" id="botonRestar" onclick="restar()">Restar</button>
+    <button class="btn btn-lg btn-primary botones" type="button" id="botonMultiplicar" onclick="multiplicar()">Multiplicar</button>
+    <button class="btn btn-lg btn-primary botones" type="button" id="botonDividir" onclick="dividir()">Dividir</button>
+</div>

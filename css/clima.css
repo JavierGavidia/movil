@@ -1,0 +1,439 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* --color-gradiente: red; */
+    --pantalla-encendida: skyblue;
+    --pantalla-apagada: rgb(12, 12, 26);
+    --color-telefono: rgb(29, 29, 29);
+}
+
+.cuerpoTel{
+    margin: 50px auto;
+    width: 300px;
+    height: 550px;
+    background-color: var(--color-telefono);
+    border: 1px inset rgb(34, 34, 34);
+    border-radius: 30px;
+
+    box-shadow: 1px 2px 3px 2px rgba(255,255,255,.4) inset,                
+                0px 25px 35px -10px rgba(18, 33, 47, 0.9);
+
+    /* box-shadow: 8px 8px 12px rgba(0,0,0,.5), Antigua*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0px 15px;
+    position: relative;
+    z-index: 5;
+}
+
+.supTel{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    /* flex-flow: row nowrap;
+    justify-content: space-between; */
+    align-items: center;
+    position: relative;
+    /* padding: 0px 15px; */
+}
+
+.camaraTel{
+    width: 14px;
+    height: 14px;
+    background: rgb(126, 126, 126);
+    border-radius: 50%;
+    box-shadow: 1px .5px .5px 0px rgba(255, 255, 255, 0.6),
+                -1px -.5px .5px .5px rgba(0, 0, 0, 0.9);
+    margin-left: 20px;
+    padding: 2.5px;
+    border: 1px double rgb(90, 90, 90);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.camaraTel::before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.6);
+}
+
+.btnSup {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: black;
+    margin-left: 10px;
+    position: relative;
+    box-shadow: 1px .5px 1px 0px rgba(255, 255, 255, 0.6);
+}
+
+.btnSup::before{
+    content: "";
+    /*display: block;
+    */position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 50%;
+    left: 12px;
+    box-shadow: inherit;
+}
+
+.auricular{
+    width: 60px;
+    height: 7px;
+    border-radius: 20px;
+    background: gray;
+    /* margin: 0px auto; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.auricular::before{
+    position: absolute;
+    padding: 2px;
+    content: "";
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: url(../img/patronPuntos.svg) repeat ;
+    /* background-size: contain; */
+    background-size: 25px;
+    /* background-origin: content-box; */
+    /* background-position: 3px 3px; */
+
+    box-shadow: 1px .5px 1px .5px rgba(255, 255, 255, 0.6),
+                -1px -.5px 1px .5px rgba(0, 0, 0, 0.9);
+}
+
+/* .supTel .vacio{
+    width: 12px;
+    height: 12px;
+} */
+
+.pantalla{
+    /* position: relative; */
+    width: 100%;
+    height: 85%;
+    /* border: 1px solid transparent; */
+    border-radius: 5px ;
+    background: linear-gradient(-45deg, rgb(44, 44, 44), rgb(83, 83, 83));
+    /* background: black; */
+    /*box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.3) inset;
+    
+    */
+    /* box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3); */
+    /* background: var(--pantalla-apagada); */
+    background: linear-gradient(-230deg, 
+                                transparent 0%, 
+                                transparent 10%, 
+                                rgb(177, 177, 177, 0.1) 25%, 
+                                rgba(255, 255, 255, 0.2) 45%,
+                                rgba(47, 47, 47, 0.1) 65%, 
+                                rgba(255, 255, 255, 0.2) 75%,
+                                rgba(41, 41, 41, 0.1) 85%);
+
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3);
+    overflow: hidden;
+    background-size: cover;
+}
+
+/* Las pseudo clases no se pueden manejar desde java script ya que no pertenecen al DOM */
+/* .pantalla::before{
+    position: absolute;
+    border-radius: 5px;
+
+    padding: 5px;
+    bottom: -5px;
+    right: -15px;
+    height: 100%;
+    width: 100%;
+    margin: 10px 15px 5px 10px;
+
+    background: linear-gradient(-230deg, 
+                                transparent 0%, 
+                                transparent 10%, 
+                                rgb(177, 177, 177, 0.1) 25%, 
+                                rgba(255, 255, 255, 0.2) 45%,
+                                rgba(47, 47, 47, 0.1) 65%, 
+                                rgba(255, 255, 255, 0.2) 75%,
+                                rgba(41, 41, 41, 0.1) 85%);
+
+    
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3);
+    content: "";
+    z-index: 99;
+} */
+
+.contentPantallaOn{
+    width: 100%;
+    height: 100%;
+    background-color: var(--pantalla-apagada);
+    /* padding-top: 40px; */
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3);
+    background-size: cover;
+    position: relative;
+    /* background-size: 50% 50%; */
+}
+
+.btnPrin{
+    width: 70px;
+    height: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    align-self: center;
+    cursor: pointer;
+
+    box-shadow: 1px .5px 1px 0px rgba(255, 255, 255, 0.3) inset,
+                -1px -.5px 1px 0px rgba(0, 0, 0, 0.7) inset;
+
+    background: linear-gradient(-210deg, 
+                transparent 0%, 
+                transparent 10%, 
+                rgba(112, 112, 112, 0.1) 25%, 
+                rgba(119, 119, 119, 0.2) 45%,
+                rgba(66, 66, 66, 0.1) 65%, 
+                rgba(104, 104, 104, 0.2) 75%,
+                rgba(41, 41, 41, 0.1) 85%);
+}
+
+.btnPrin:active{
+    box-shadow: 1px .5px  1px 0px rgba(12, 12, 12, 0.9) inset;
+}
+
+.cont-btnOnOff{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid red; */
+    left: -50px;
+    top: 80px;
+    cursor: pointer;
+}
+
+.cont-btnOnOff:active{
+    transform: translateX(4px);
+    /* display: none; */
+    opacity: 0;
+}
+
+.btnOnOff{
+    width: 3px;
+    height: 50px;
+    /* background-color: var(--color-telefono); */
+    background-color: rgb(54, 54, 54);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    float: right;
+}
+
+.btnVol{
+    position: absolute;
+    width: 3px;
+    height: 80px;
+    left: -3px;
+    top: 150px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: rgb(54, 54, 54);
+}
+
+
+
+.appTiempo{
+    background: url(../img/weather-app-icon.png) no-repeat;
+
+}
+
+.appCalculadora1{
+    background: url(../img/calculadora1-app-icon.jpg) no-repeat;
+}
+
+.appCalculadora2{
+    background: url(../img/calculadora2-app-icon.png) no-repeat;
+}
+
+.appFotos{
+    background: url(../img/fotos-app-icon.jpg) no-repeat;
+}
+
+.appReloj{
+    background: url(../img/reloj-app-icon.png) no-repeat;
+    background-size: 105% 105% !important;
+}
+
+.pantallaInicio{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
+}
+
+.espacioApps{
+    width: 100%;
+    height: 200px;
+
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.espacioApps > div{
+
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    margin: 0px 10px;
+
+    border-radius: 9px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .6);
+
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* .contenedorAPP{
+    width: 100%;
+    height: 100%;
+    background-color: var(--pantalla-apagada);
+    padding-top: 20px;
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3);
+} */
+
+.calculadoraAPP{
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    padding: 20px;
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3);
+}
+
+.toolTip{
+    position:  absolute;
+    text-align: center;
+    border-radius: 5px;
+    pointer-events: none;
+    background: rgba(0, 0, 0, .6);
+    font-size: 14px;
+    line-height: 14px;
+    color: white;
+    max-width: 100px;
+    /* height: 30px; */
+    padding: 10px;
+    z-index: 1001;
+    display: none;
+    /* margin: 20px; */
+}
+
+.toolTip::after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 5px solid transparent;
+    border-top:7px solid rgba(0, 0, 0, .6);
+    top: 100%;
+    left: calc(50% + -5px);
+}
+
+.calculadora2APP{
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    padding: 20px;
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3);
+}
+
+.climaAPP{
+    width: 100%;
+    height: 100%;
+    background-color:darkcyan;
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, .9),
+                1px 1px 6px 3px rgba(0, 0, 0, .6) inset,
+                2px 0px 1px rgba(206, 206, 206, .3);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+.climaLoading{
+    position: relative;
+    /* top: 40%; */
+    font-size: 20px;
+    text-align: center;
+}
+
+.climaLoading i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.climaInfo{
+    display: none;
+    text-align: center;
+    color: white;
+    /* position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.infoTemperatura{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.infoCiudad{
+    font-size: 1.3rem;
+}
+
+.climaVolver{
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: rgb(0, 88, 88);
+}
+.climaVolver:hover{
+    color: white;
+}
